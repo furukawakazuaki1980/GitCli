@@ -5,54 +5,54 @@ Public Class BitOperaterForUintegerDouble
 
 
 
-    '32ƒrƒbƒgã‰º˜AŒ‹‚ÌOR.checked2023_10_11
+    '32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµã®OR.checked2023_10_11
     Public Shared Sub ORAsUintegerDouble(ByVal aHighUinteger1 As Double, ByVal aLowUinteger1 As Double, ByVal aHighUinteger2 As Double, ByVal aLowUinteger2 As Double, ByRef aRefHighResult As UInteger, ByRef aRefLowResult As UInteger)
 
-        'ã‚Ìuinteger“¯m‚ÌOR
+        'ä¸Šã®uintegeråŒå£«ã®OR
         aRefHighResult = ORAsUinteger(aHighUinteger1, aHighUinteger2)
 
-        '‰º‚Ìuinteger“¯m‚ÌOR
+        'ä¸‹ã®uintegeråŒå£«ã®OR
         aRefLowResult = ORAsUinteger(aLowUinteger1, aLowUinteger2)
 
     End Sub
 
 
-    '32ƒrƒbƒgã‰º˜AŒ‹‚ÌAND.checked2023_10_11
+    '32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµã®AND.checked2023_10_11
     Public Shared Sub ANDAsUintegerDouble(ByVal aHighUinteger1 As Double, ByVal aLowUinteger1 As Double, ByVal aHighUinteger2 As Double, ByVal aLowUinteger2 As Double, ByRef aRefHighResult As UInteger, ByRef aRefLowResult As UInteger)
 
-        'ã‚Ìuinteger“¯m‚ÌAND
+        'ä¸Šã®uintegeråŒå£«ã®AND
         aRefHighResult = ANDAsUinteger(aHighUinteger1, aHighUinteger2)
 
-        '‰º‚Ìuinteger“¯m‚ÌAND
+        'ä¸‹ã®uintegeråŒå£«ã®AND
         aRefLowResult = ANDAsUinteger(aLowUinteger1, aLowUinteger2)
 
     End Sub
 
 
-    '32ƒrƒbƒgã‰º˜AŒ‹‚ÌEXOR.checked2023_10_11
+    '32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµã®EXOR.checked2023_10_11
     Public Shared Sub EXORAsUintegerDouble(ByVal aHighUinteger1 As Double, ByVal aLowUinteger1 As Double, ByVal aHighUinteger2 As Double, ByVal aLowUinteger2 As Double, ByRef aRefHighResult As UInteger, ByRef aRefLowResult As UInteger)
 
-        'ã‚Ìuinteger“¯m‚ÌEXOR
+        'ä¸Šã®uintegeråŒå£«ã®EXOR
         aRefHighResult = EXORAsUinteger(aHighUinteger1, aHighUinteger2)
 
-        '‰º‚Ìuinteger“¯m‚ÌEXOR
+        'ä¸‹ã®uintegeråŒå£«ã®EXOR
         aRefLowResult = EXORAsUinteger(aLowUinteger1, aLowUinteger2)
 
     End Sub
 
-    '32ƒrƒbƒgã‰º˜AŒ‹‚ÌNOT.checked2023_10_11
+    '32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµã®NOT.checked2023_10_11
     Public Shared Sub NOTAsUintegerDouble(ByVal aHighUinteger As Double, ByVal aLowUinteger As Double, ByRef aRefHighResult As UInteger, ByRef aRefLowResult As UInteger)
 
-        'ã‚Ìuinteger‚ÌNOT
+        'ä¸Šã®uintegerã®NOT
         aRefHighResult = NOTAsUinteger(aHighUinteger)
 
-        '‰º‚Ìuinteger‚ÌNOT
+        'ä¸‹ã®uintegerã®NOT
         aRefLowResult = NOTAsUinteger(aLowUinteger)
 
     End Sub
 
 
-    '32ƒrƒbƒg‚ğ˜AŒ‹‚µ‚Ä64ƒrƒbƒg‚É‚µ‚ÄA¶ƒVƒtƒg.checked2023_10_10
+    '32ãƒ“ãƒƒãƒˆã‚’é€£çµã—ã¦64ãƒ“ãƒƒãƒˆã«ã—ã¦ã€å·¦ã‚·ãƒ•ãƒˆ.checked2023_10_10
     Public Shared Sub LeftShiftUintegerDouble(ByVal aHighUinteger As UInteger, ByVal aLowUinteger As UInteger, ByVal aLeftShiftNum As UInteger, ByRef aRefHighShiftResult As UInteger, ByRef aRefLowShiftResult As UInteger)
 
         aRefHighShiftResult = 0
@@ -64,44 +64,44 @@ Public Class BitOperaterForUintegerDouble
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaLeftShiftNum<= UINTEGER_DOUBLE_BIT_LENGTH - 1
-        'ˆ¶ƒVƒtƒg‚ª‚Å‚«‚é
+        'ã“ã“ã«æ¥ã‚‹â‡”aLeftShiftNum<= UINTEGER_DOUBLE_BIT_LENGTH - 1
+        'âˆ´å·¦ã‚·ãƒ•ãƒˆãŒã§ãã‚‹
         If aLeftShiftNum >= UINTEGER_BIT_LENGTH Then
-            '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH<=aLeftShiftNum<= UINTEGER_DOUBLE_BIT_LENGTH - 1
+            'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH<=aLeftShiftNum<= UINTEGER_DOUBLE_BIT_LENGTH - 1
 
-            '‰º‚ÌƒVƒtƒgŒ‹‰Ê‚Í0‚Ì‚Ü‚Ü
+            'ä¸‹ã®ã‚·ãƒ•ãƒˆçµæœã¯0ã®ã¾ã¾
 
-            'ã‚ÌƒVƒtƒgŒ‹‰Ê‚Í‰º‚Ìˆø”‚ğ<<(aLeftShiftNum - UINTEGER_BIT_LENGTH)‚µ‚½’l(checked)
+            'ä¸Šã®ã‚·ãƒ•ãƒˆçµæœã¯ä¸‹ã®å¼•æ•°ã‚’<<(aLeftShiftNum - UINTEGER_BIT_LENGTH)ã—ãŸå€¤(checked)
             aRefHighShiftResult = LeftShiftUinteger(aLowUinteger, aLeftShiftNum - UINTEGER_BIT_LENGTH)
 
             Return 'checked
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH-1>=aLeftShiftNum >=0
+        'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH-1>=aLeftShiftNum >=0
 
-        '‰º‚ÌŒ‹‰Ê‚É‚Â‚¢‚Ä‚ÍA‰º‚Ìˆø”‚Ì’l<<aLeftShitNum
+        'ä¸‹ã®çµæœã«ã¤ã„ã¦ã¯ã€ä¸‹ã®å¼•æ•°ã®å€¤<<aLeftShitNum
         aRefLowShiftResult = LeftShiftUinteger(aLowUinteger, aLeftShiftNum)
 
-        'ã‚ÌŒ‹‰Ê‚É‚Â‚¢‚Ä‚ÍAŸ‚Ì“ñ‚Â‚Ì’l‚Ì(uinteger“¯m‚Ì)OR
-        'ˆø”‚Ìã‚Ì’l<<aLeftShiftNum
+        'ä¸Šã®çµæœã«ã¤ã„ã¦ã¯ã€æ¬¡ã®äºŒã¤ã®å€¤ã®(uintegeråŒå£«ã®)OR
+        'å¼•æ•°ã®ä¸Šã®å€¤<<aLeftShiftNum
         Dim high_uinteger_left_shift As UInteger = LeftShiftUinteger(aHighUinteger, aLeftShiftNum)
 
 
-        'ˆø”‚Ì‰º‚Ì’l>>(UINTEGER_BIT_LENGTH-aLeftShiftNum)
+        'å¼•æ•°ã®ä¸‹ã®å€¤>>(UINTEGER_BIT_LENGTH-aLeftShiftNum)
         Dim low_uinteger_right_shift As UInteger = RightShiftUinteger(aLowUinteger, UINTEGER_BIT_LENGTH - aLeftShiftNum)
 
-        'ã‚ÌŒ‹‰Ê
+        'ä¸Šã®çµæœ
         aRefHighShiftResult = ORAsUinteger(high_uinteger_left_shift, low_uinteger_right_shift)
 
         Return
     End Sub
 
-    '32ƒrƒbƒg‚ğ˜AŒ‹‚µ‚Ä64ƒrƒbƒg‚É‚µ‚ÄA‰EƒVƒtƒg.checked2023_10_10
+    '32ãƒ“ãƒƒãƒˆã‚’é€£çµã—ã¦64ãƒ“ãƒƒãƒˆã«ã—ã¦ã€å³ã‚·ãƒ•ãƒˆ.checked2023_10_10
 
     Public Shared Sub RightShiftUintegerDouble(ByVal aHighUinteger As UInteger, ByVal aLowUinteger As UInteger, ByVal aRightShiftNum As UInteger, ByRef aRefHighResult As UInteger, ByRef aRefLowResult As UInteger)
 
-        'Å‰AQÆ“n‚µ‚Ì•Ï”‚ÍA0‚Å‰Šú‰»
+        'æœ€åˆã€å‚ç…§æ¸¡ã—ã®å¤‰æ•°ã¯ã€0ã§åˆæœŸåŒ–
         aRefHighResult = 0
         aRefLowResult = 0
 
@@ -110,31 +110,31 @@ Public Class BitOperaterForUintegerDouble
             Return
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaRightShiftNum<=UINTEGER_DOUBLE_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”aRightShiftNum<=UINTEGER_DOUBLE_BIT_LENGTH-1
 
         If aRightShiftNum >= UINTEGER_BIT_LENGTH Then 'checked
-            '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH<=aRightShiftNum<=UINTEGER_DOUBLE_BIT_LENGTH-1
+            'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH<=aRightShiftNum<=UINTEGER_DOUBLE_BIT_LENGTH-1
 
-            'ã‚ÌQÆ“n‚µ‚Ì•Ï”‚Í0‚Ì‚Ü‚Ü
+            'ä¸Šã®å‚ç…§æ¸¡ã—ã®å¤‰æ•°ã¯0ã®ã¾ã¾
 
-            '‰º‚ÌQÆ“n‚µ‚Ì•Ï”‚ÍAã‚Ìˆø”‚ğ>>(aRightShiftNum-UINTEGER_BIT_LENGTH)‚µ‚½’l(’l‚à³í)
+            'ä¸‹ã®å‚ç…§æ¸¡ã—ã®å¤‰æ•°ã¯ã€ä¸Šã®å¼•æ•°ã‚’>>(aRightShiftNum-UINTEGER_BIT_LENGTH)ã—ãŸå€¤(å€¤ã‚‚æ­£å¸¸)
             aRefLowResult = RightShiftUinteger(aHighUinteger, aRightShiftNum - UINTEGER_BIT_LENGTH)
 
             Return
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaRightShiftNum<=UINTEGER_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”aRightShiftNum<=UINTEGER_BIT_LENGTH-1
 
-        'ã‚ÌŒ‹‰Ê‚ÍAã‚Ìˆø”‚ğ>>aRightShiftNum‚µ‚½’l
+        'ä¸Šã®çµæœã¯ã€ä¸Šã®å¼•æ•°ã‚’>>aRightShiftNumã—ãŸå€¤
         aRefHighResult = RightShiftUinteger(aHighUinteger, aRightShiftNum)
 
-        '‰º‚ÌŒ‹‰Ê‚ÍAŸ‚Ì“ñ‚Â‚Ì’l‚ÌOR‚Å‚ ‚é
+        'ä¸‹ã®çµæœã¯ã€æ¬¡ã®äºŒã¤ã®å€¤ã®ORã§ã‚ã‚‹
 
-        'ã‚Ìˆø”‚ğ<<(UINTEGER_BIT_LENGTH-aRightShiftNum)‚µ‚½’l
+        'ä¸Šã®å¼•æ•°ã‚’<<(UINTEGER_BIT_LENGTH-aRightShiftNum)ã—ãŸå€¤
         Dim high_uinteger_left_shift As UInteger = LeftShiftUinteger(aHighUinteger, UINTEGER_BIT_LENGTH - aRightShiftNum)
 
-        '‰º‚Ìˆø”‚ğ>>aRightShiftNum‚µ‚½’l
+        'ä¸‹ã®å¼•æ•°ã‚’>>aRightShiftNumã—ãŸå€¤
         Dim low_uinteger_right_shift As UInteger = RightShiftUinteger(aLowUinteger, aRightShiftNum)
 
         aRefLowResult = ORAsUinteger(high_uinteger_left_shift, low_uinteger_right_shift)
@@ -144,7 +144,7 @@ Public Class BitOperaterForUintegerDouble
 
     End Sub
 
-    '64ƒrƒbƒg(32ƒrƒbƒgã‰º˜AŒ‹)‚ÌA•„†‚Â‚«¶ƒVƒtƒg.checked2024_03_01
+    '64ãƒ“ãƒƒãƒˆ(32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµ)ã®ã€ç¬¦å·ã¤ãå·¦ã‚·ãƒ•ãƒˆ.checked2024_03_01
     Public Shared Sub LeftShiftUintegerDoubleWithSignBit(ByVal aUintegerHigh As UInteger, ByVal aUintegerLow As UInteger, ByVal aLeftShiftNum As UInteger, ByRef aRefLeftShiftHigh As UInteger, ByRef aRefLeftShiftLow As UInteger)
 
         aRefLeftShiftHigh = 0
@@ -156,9 +156,9 @@ Public Class BitOperaterForUintegerDouble
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ1<=aLeftShiftNum
+        'ã“ã“ã«æ¥ã‚‹â‡”1<=aLeftShiftNum
 
-        'Å‚àã‚Ìƒrƒbƒg‚¾‚¯‹L‰¯
+        'æœ€ã‚‚ä¸Šã®ãƒ“ãƒƒãƒˆã ã‘è¨˜æ†¶
         Dim only_sign_bit_memory As UInteger = ANDAsUinteger(aUintegerHigh, &H80000000L)
 
 
@@ -171,68 +171,68 @@ Public Class BitOperaterForUintegerDouble
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ1<=aLeftShiftNum<=63
-        'ˆ•„†‚Â‚«¶ƒVƒtƒg‚ª‚Å‚«‚é
+        'ã“ã“ã«æ¥ã‚‹â‡”1<=aLeftShiftNum<=63
+        'âˆ´ç¬¦å·ã¤ãå·¦ã‚·ãƒ•ãƒˆãŒã§ãã‚‹
 
-        '’Êí‚Ì¶ƒVƒtƒg‚ğs‚¤
+        'é€šå¸¸ã®å·¦ã‚·ãƒ•ãƒˆã‚’è¡Œã†
         Dim ref_left_shift_high As UInteger = 0
         Dim ref_left_shift_low As UInteger = 0
         LeftShiftUintegerDouble(aUintegerHigh, aUintegerLow, aLeftShiftNum, ref_left_shift_high, ref_left_shift_low)
 
-        'ÅãˆÊƒrƒbƒg‚ğˆê’U0‚É‚·‚é
+        'æœ€ä¸Šä½ãƒ“ãƒƒãƒˆã‚’ä¸€æ—¦0ã«ã™ã‚‹
         Dim ref_left_shift_high_sign_bit_zero As UInteger = ANDAsUinteger(ref_left_shift_high, &H7FFFFFFF)
 
-        '‰º‚Ì32ƒrƒbƒg‚ÍA‰º‚Ìif•¶‚Éƒqƒbƒg‚µ‚Ä‚à‚µ‚È‚­‚Ä‚àA’Êí‚Ì¶ƒVƒtƒg‚ÌŒ‹‰Ê
+        'ä¸‹ã®32ãƒ“ãƒƒãƒˆã¯ã€ä¸‹ã®ifæ–‡ã«ãƒ’ãƒƒãƒˆã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã€é€šå¸¸ã®å·¦ã‚·ãƒ•ãƒˆã®çµæœ
         aRefLeftShiftLow = ref_left_shift_low
 
-        If only_sign_bit_memory = 0 Then 'Œ³X‚ÌA‹L‰¯‚µ‚Ä‚¨‚¢‚½ÅãˆÊƒrƒbƒg‚ª0
+        If only_sign_bit_memory = 0 Then 'å…ƒã€…ã®ã€è¨˜æ†¶ã—ã¦ãŠã„ãŸæœ€ä¸Šä½ãƒ“ãƒƒãƒˆãŒ0
             aRefLeftShiftHigh = ref_left_shift_high_sign_bit_zero
 
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ{1<=aLeftShiftNum<=63}‚©‚Â{Œ³X‚ÌA‹L‰¯‚µ‚Ä‚¨‚¢‚½ÅãˆÊƒrƒbƒg‚ª1}
+        'ã“ã“ã«æ¥ã‚‹â‡”{1<=aLeftShiftNum<=63}ã‹ã¤{å…ƒã€…ã®ã€è¨˜æ†¶ã—ã¦ãŠã„ãŸæœ€ä¸Šä½ãƒ“ãƒƒãƒˆãŒ1}
 
-        'ã‚Ì32ƒrƒbƒg‚ÍAÅãˆÊƒrƒbƒg‚ğˆê’U0‚É‚µ‚½Œ‹‰Ê‚ÆA0x80000000‚Æ‚ÌOR
+        'ä¸Šã®32ãƒ“ãƒƒãƒˆã¯ã€æœ€ä¸Šä½ãƒ“ãƒƒãƒˆã‚’ä¸€æ—¦0ã«ã—ãŸçµæœã¨ã€0x80000000ã¨ã®OR
         aRefLeftShiftHigh = ORAsUinteger(ref_left_shift_high_sign_bit_zero, &H80000000L)
 
-        '‰º‚Ì32ƒrƒbƒg‚ÍA’Êí‚Ì¶ƒVƒtƒg‚ÌŒ‹‰Ê‚È‚Ì‚ÅA‚»‚Ì‚Ü‚Ü
+        'ä¸‹ã®32ãƒ“ãƒƒãƒˆã¯ã€é€šå¸¸ã®å·¦ã‚·ãƒ•ãƒˆã®çµæœãªã®ã§ã€ãã®ã¾ã¾
 
         Return
 
     End Sub
 
-    'Å‰‚©‚çì‚è’¼‚·B32ƒrƒbƒg‚¾‚¯‚ÌAƒrƒbƒg1‚Ì˜A‘±‚Ìƒrƒbƒgƒ}ƒXƒN(¶ƒVƒtƒg‚Â‚«)‚ª‚ ‚é‚Ì‚ÅA
-    '‚»‚ê‚ğ—˜—p‚µ‚ÄA64ƒrƒbƒg(32ƒrƒbƒgã‰º˜AŒ‹)‚ÌAƒrƒbƒg1‚Ì˜A‘±‚Ìƒrƒbƒgƒ}ƒXƒN(¶ƒVƒtƒg‚Â‚«)‚ğì‚ê‚Î—Ç‚¢
-    ''64ƒrƒbƒg(32ƒrƒbƒgã‰º˜AŒ‹)‚ÌA•„†‚Â‚«‰EƒVƒtƒg.checked2024_03_01
+    'æœ€åˆã‹ã‚‰ä½œã‚Šç›´ã™ã€‚32ãƒ“ãƒƒãƒˆã ã‘ã®ã€ãƒ“ãƒƒãƒˆ1ã®é€£ç¶šã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯(å·¦ã‚·ãƒ•ãƒˆã¤ã)ãŒã‚ã‚‹ã®ã§ã€
+    'ãã‚Œã‚’åˆ©ç”¨ã—ã¦ã€64ãƒ“ãƒƒãƒˆ(32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµ)ã®ã€ãƒ“ãƒƒãƒˆ1ã®é€£ç¶šã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯(å·¦ã‚·ãƒ•ãƒˆã¤ã)ã‚’ä½œã‚Œã°è‰¯ã„
+    ''64ãƒ“ãƒƒãƒˆ(32ãƒ“ãƒƒãƒˆä¸Šä¸‹é€£çµ)ã®ã€ç¬¦å·ã¤ãå³ã‚·ãƒ•ãƒˆ.checked2024_03_01
 
     Public Shared Sub RightShiftUintegerDoubleWithSignBit(ByVal aUintegerHigh As UInteger, ByVal aUintegerLow As UInteger, ByVal aRightShift As UInteger, ByRef aRefRightShiftHigh As UInteger, ByRef aRefRightShiftLow As UInteger)
 
         aRefRightShiftHigh = 0
         aRefRightShiftLow = 0
 
-        'ÅãˆÊƒrƒbƒg‚ğ‹L‰¯
+        'æœ€ä¸Šä½ãƒ“ãƒƒãƒˆã‚’è¨˜æ†¶
         Dim memory_only_sign_bit As UInteger = ANDAsUinteger(aUintegerHigh, &H80000000L)
 
         If aRightShift >= UINTEGER_DOUBLE_BIT_LENGTH - 1 Then
-            'ÅãˆÊƒrƒbƒg‚É‡‚í‚¹‚ÄA‘S‚Äƒrƒbƒg1‚Ü‚½‚Í‘S‚Äƒrƒbƒg0
+            'æœ€ä¸Šä½ãƒ“ãƒƒãƒˆã«åˆã‚ã›ã¦ã€å…¨ã¦ãƒ“ãƒƒãƒˆ1ã¾ãŸã¯å…¨ã¦ãƒ“ãƒƒãƒˆ0
             Dim all_bit_one_or_zero As UInteger = IIf(memory_only_sign_bit = &H80000000L, &HFFFFFFFFL, 0)
             aRefRightShiftHigh = all_bit_one_or_zero
             aRefRightShiftLow = all_bit_one_or_zero
             Return
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-2
+        'ã“ã“ã«æ¥ã‚‹â‡”aRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-2
         If aRightShift = 0 Then
-            '’l“n‚µ‚Ìˆø”‚ğ‚»‚Ì‚Ü‚Ü“ü‚ê‚ÄI—¹
+            'å€¤æ¸¡ã—ã®å¼•æ•°ã‚’ãã®ã¾ã¾å…¥ã‚Œã¦çµ‚äº†
             aRefRightShiftHigh = aUintegerHigh
             aRefRightShiftLow = aUintegerLow
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ1<=aRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-2
+        'ã“ã“ã«æ¥ã‚‹â‡”1<=aRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-2
 
-        '’Êí‚Ì‰EƒVƒtƒg‚ğ‚·‚é
+        'é€šå¸¸ã®å³ã‚·ãƒ•ãƒˆã‚’ã™ã‚‹
         Dim standard_right_shift_high As UInteger = 0
         Dim standard_right_shift_low As UInteger = 0
         RightShiftUintegerDouble(aUintegerHigh, aUintegerLow, aRightShift, standard_right_shift_high, standard_right_shift_low)
@@ -240,28 +240,28 @@ Public Class BitOperaterForUintegerDouble
 
 
         If memory_only_sign_bit = 0 Then
-            '’Êí‚Ì‰EƒVƒtƒg‚ÌŒ‹‰Ê‚ğAQÆ“n‚µ‚Ì•Ï”‚É“ü‚ê‚é
+            'é€šå¸¸ã®å³ã‚·ãƒ•ãƒˆã®çµæœã‚’ã€å‚ç…§æ¸¡ã—ã®å¤‰æ•°ã«å…¥ã‚Œã‚‹
             aRefRightShiftHigh = standard_right_shift_high
             aRefRightShiftLow = standard_right_shift_low
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ{1<=aRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-1}
-        'ˆ’Êí‚Ì‰EƒVƒtƒg‚ÌŒ‹‰Ê‚É‘Î‚µ‚ÄA¶’[‚ÉAaRightShiftŒÂ‚Ìƒrƒbƒg1‚ğ˜A‘±‚µ‚Ä“ü‚ê‚ê‚Î—Ç‚¢
+        'ã“ã“ã«æ¥ã‚‹â‡”{1<=aRightShift<= UINTEGER_DOUBLE_BIT_LENGTH-1}
+        'âˆ´é€šå¸¸ã®å³ã‚·ãƒ•ãƒˆã®çµæœã«å¯¾ã—ã¦ã€å·¦ç«¯ã«ã€aRightShiftå€‹ã®ãƒ“ãƒƒãƒˆ1ã‚’é€£ç¶šã—ã¦å…¥ã‚Œã‚Œã°è‰¯ã„
 
-        '¶ƒVƒtƒg‚µ‚½ƒrƒbƒgƒ}ƒXƒN‚ğì‚é
+        'å·¦ã‚·ãƒ•ãƒˆã—ãŸãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã‚’ä½œã‚‹
         Dim bit_mask_left_shift_high As UInteger = 0
         Dim bit_mask_left_shift_low As UInteger = 0
         SetContinuousBitOneBitMaskUintegerDoubleWithLeftShift(aRightShift, UINTEGER_DOUBLE_BIT_LENGTH - aRightShift, bit_mask_left_shift_high, bit_mask_left_shift_low)
 
-        '’Êí‚Ì‰EƒVƒtƒg‚ÌŒ‹‰Ê‚ÆA¶ƒVƒtƒg‚µ‚½ƒrƒbƒgƒ}ƒXƒN‚Æ‚ÌOR‚ğAÅI“I‚È“š‚¦‚Æ‚·‚é
+        'é€šå¸¸ã®å³ã‚·ãƒ•ãƒˆã®çµæœã¨ã€å·¦ã‚·ãƒ•ãƒˆã—ãŸãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã¨ã®ORã‚’ã€æœ€çµ‚çš„ãªç­”ãˆã¨ã™ã‚‹
         aRefRightShiftHigh = ORAsUinteger(bit_mask_left_shift_high, standard_right_shift_high)
         aRefRightShiftLow = ORAsUinteger(bit_mask_left_shift_low, standard_right_shift_low)
 
         Return
     End Sub
 
-    '˜A‘±‚µ‚½ƒrƒbƒg1‚Ìƒrƒbƒgƒ}ƒXƒN‚ğì‚éBchecked
+    'é€£ç¶šã—ãŸãƒ“ãƒƒãƒˆ1ã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã‚’ä½œã‚‹ã€‚checked
     Public Shared Sub SetContinuousBitOneBitMaskUintegerDouble(ByVal aContinousBitOneCount As Byte, ByRef aRefBitMaskHigh As UInteger, ByRef aRefBitMaskLow As UInteger)
 
         aRefBitMaskHigh = 0
@@ -270,7 +270,7 @@ Public Class BitOperaterForUintegerDouble
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ1<=aContinousBitOneCount
+        'ã“ã“ã«æ¥ã‚‹â‡”1<=aContinousBitOneCount
 
         If aContinousBitOneCount >= UINTEGER_DOUBLE_BIT_LENGTH Then
             aRefBitMaskHigh = &HFFFFFFFFL
@@ -278,29 +278,29 @@ Public Class BitOperaterForUintegerDouble
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ1<=aContinousBitOneCount<=UINTEGER_DOUBLE_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”1<=aContinousBitOneCount<=UINTEGER_DOUBLE_BIT_LENGTH-1
 
         If aContinousBitOneCount <= UINTEGER_BIT_LENGTH Then
-            '‰º‚Ì32ƒrƒbƒgŒÀ’è‚Åì‚ê‚Î—Ç‚¢
+            'ä¸‹ã®32ãƒ“ãƒƒãƒˆé™å®šã§ä½œã‚Œã°è‰¯ã„
             aRefBitMaskLow = MakeBitMaskContinuousBitOne(aContinousBitOneCount)
 
             Return 'chekced
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH+1<=aContinousBitOneCount<=UINTEGER_DOUBLE_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH+1<=aContinousBitOneCount<=UINTEGER_DOUBLE_BIT_LENGTH-1
 
-        'ˆ‰º‚Ì’l‚Í&HFFFFFFFFL‚ÆŒˆ‚Ü‚Á‚Ä‚¢‚é
+        'âˆ´ä¸‹ã®å€¤ã¯&HFFFFFFFFLã¨æ±ºã¾ã£ã¦ã„ã‚‹
         aRefBitMaskLow = &HFFFFFFFFL
 
-        'ã‚É‚Â‚¢‚Ä‚ÍAaContinousBitOneCount-UINTEGER_BIT_LENGTH‚Ì’l‚ÅAã‚¾‚¯‚Åì‚ê‚Î—Ç‚¢
+        'ä¸Šã«ã¤ã„ã¦ã¯ã€aContinousBitOneCount-UINTEGER_BIT_LENGTHã®å€¤ã§ã€ä¸Šã ã‘ã§ä½œã‚Œã°è‰¯ã„
         aRefBitMaskHigh = MakeBitMaskContinuousBitOne(aContinousBitOneCount - UINTEGER_BIT_LENGTH)
 
 
         Return
     End Sub
 
-    '˜A‘±‚µ‚½ƒrƒbƒg1‚Ìƒrƒbƒgƒ}ƒXƒN‚É‘Î‚µ‚ÄA¶ƒVƒtƒg‚ğs‚¤.checked2024_03_01
+    'é€£ç¶šã—ãŸãƒ“ãƒƒãƒˆ1ã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã«å¯¾ã—ã¦ã€å·¦ã‚·ãƒ•ãƒˆã‚’è¡Œã†.checked2024_03_01
     Public Shared Sub SetContinuousBitOneBitMaskUintegerDoubleWithLeftShift(ByVal aContinousBitOneCount As Byte, ByVal aLeftShiftNum As Byte, ByRef aRefBitMaskHigh As UInteger, ByRef aRefBitMaskLow As UInteger)
 
         aRefBitMaskHigh = 0
@@ -312,14 +312,14 @@ Public Class BitOperaterForUintegerDouble
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌƒrƒbƒgƒ}ƒXƒN‚É‘Î‚µ‚ÄA¶ƒVƒtƒg‚ğÀs‚µ‚Ä‚àA‘åä•v
-        'ˆƒrƒbƒgƒ}ƒXƒN‚ğˆê’Uì‚èA‚»‚Ìƒrƒbƒgƒ}ƒXƒN‚É‘Î‚µ‚ÄA¶ƒVƒtƒg‚ğÀs‚·‚é
+        'ã“ã“ã«æ¥ã‚‹â‡”ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã«å¯¾ã—ã¦ã€å·¦ã‚·ãƒ•ãƒˆã‚’å®Ÿè¡Œã—ã¦ã‚‚ã€å¤§ä¸ˆå¤«
+        'âˆ´ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã‚’ä¸€æ—¦ä½œã‚Šã€ãã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯ã«å¯¾ã—ã¦ã€å·¦ã‚·ãƒ•ãƒˆã‚’å®Ÿè¡Œã™ã‚‹
 
         Dim ref_bitmask_high As UInteger = 0
         Dim ref_bitmask_low As UInteger = 0
         SetContinuousBitOneBitMaskUintegerDouble(aContinousBitOneCount, ref_bitmask_high, ref_bitmask_low)
 
-        '¶ƒVƒtƒg‚ğs‚¤BŒ‹‰Ê‚Í‚»‚Ì‚Ü‚ÜQÆ“n‚µ‚Ì•Ï”
+        'å·¦ã‚·ãƒ•ãƒˆã‚’è¡Œã†ã€‚çµæœã¯ãã®ã¾ã¾å‚ç…§æ¸¡ã—ã®å¤‰æ•°
         LeftShiftUintegerDouble(ref_bitmask_high, ref_bitmask_low, aLeftShiftNum, aRefBitMaskHigh, aRefBitMaskLow)
 
         Return
@@ -327,10 +327,10 @@ Public Class BitOperaterForUintegerDouble
     End Sub
 
 
-    '64ƒrƒbƒg(ã‰º32ƒrƒbƒg‚Ì˜AŒ‹)‚Ì¶‰ñ“]ƒVƒtƒg.checked2024_03_01
+    '64ãƒ“ãƒƒãƒˆ(ä¸Šä¸‹32ãƒ“ãƒƒãƒˆã®é€£çµ)ã®å·¦å›è»¢ã‚·ãƒ•ãƒˆ.checked2024_03_01
     Public Shared Sub LeftRotateShiftAsUintegerDouble(ByVal aUintegerHigh As UInteger, ByVal aUintegerLow As UInteger, ByVal aLeftShiftNum As Byte, ByRef aRefRotateHigh As UInteger, ByRef aRefRotateLow As UInteger)
 
-        '‰ñ“]ƒVƒtƒg‚È‚Ì‚ÅAmod64‚ğæ‚é
+        'å›è»¢ã‚·ãƒ•ãƒˆãªã®ã§ã€mod64ã‚’å–ã‚‹
         Dim left_shift_num_mod_sixty_four As Byte = (aLeftShiftNum Mod UINTEGER_DOUBLE_BIT_LENGTH)
 
         If left_shift_num_mod_sixty_four = 0 Then
@@ -339,29 +339,29 @@ Public Class BitOperaterForUintegerDouble
             Return 'checked
         End If
 
-        '‚±‚±‚É‚ ‚éÌ1<=left_shift_num_mod_sixty_four<=63
-        'ˆ‰ñ“]¶ƒVƒtƒg‚ª‚Å‚«‚é
+        'ã“ã“ã«ã‚ã‚‹â‡”1<=left_shift_num_mod_sixty_four<=63
+        'âˆ´å›è»¢å·¦ã‚·ãƒ•ãƒˆãŒã§ãã‚‹
 
-        'Œ³‚Ì’l‚Ì¶(left_shift_num_mod_sixty_four)ƒVƒtƒg
+        'å…ƒã®å€¤ã®å·¦(left_shift_num_mod_sixty_four)ã‚·ãƒ•ãƒˆ
         Dim ref_left_shift_high As UInteger = 0
         Dim ref_left_shift_low As UInteger = 0
         LeftShiftUintegerDouble(aUintegerHigh, aUintegerLow, left_shift_num_mod_sixty_four, ref_left_shift_high, ref_left_shift_low)
 
-        'Œ³‚Ì’l‚Ì‰E(64-left_shift_num_mod_sixty_four)ƒVƒtƒg‚ğ“¾‚é
+        'å…ƒã®å€¤ã®å³(64-left_shift_num_mod_sixty_four)ã‚·ãƒ•ãƒˆã‚’å¾—ã‚‹
         Dim ref_right_shift_high As UInteger = 0
         Dim ref_right_shift_low As UInteger = 0
         RightShiftUintegerDouble(aUintegerHigh, aUintegerLow, UINTEGER_DOUBLE_BIT_LENGTH - left_shift_num_mod_sixty_four, ref_right_shift_high, ref_right_shift_low)
 
-        '¶ƒVƒtƒg‚ÌŒ‹‰Ê‚ÆA‰EƒVƒtƒg‚ÌŒ‹‰Ê‚É‚Â‚¢‚ÄA64ƒrƒbƒg‚ÌOR‚ğ‚·‚é
-        '64ƒrƒbƒg‚ÌOR‚ÍA32ƒrƒbƒg‚Ã‚ÂAã‰º•ÊX‚ÉOR
-        aRefRotateHigh = ORAsUinteger(ref_left_shift_high, ref_right_shift_high) 'ã32ƒrƒbƒg
-        aRefRotateLow = ORAsUinteger(ref_left_shift_low, ref_right_shift_low) '‰º32ƒrƒbƒg
+        'å·¦ã‚·ãƒ•ãƒˆã®çµæœã¨ã€å³ã‚·ãƒ•ãƒˆã®çµæœã«ã¤ã„ã¦ã€64ãƒ“ãƒƒãƒˆã®ORã‚’ã™ã‚‹
+        '64ãƒ“ãƒƒãƒˆã®ORã¯ã€32ãƒ“ãƒƒãƒˆã¥ã¤ã€ä¸Šä¸‹åˆ¥ã€…ã«OR
+        aRefRotateHigh = ORAsUinteger(ref_left_shift_high, ref_right_shift_high) 'ä¸Š32ãƒ“ãƒƒãƒˆ
+        aRefRotateLow = ORAsUinteger(ref_left_shift_low, ref_right_shift_low) 'ä¸‹32ãƒ“ãƒƒãƒˆ
 
         Return
 
     End Sub
 
-    'uintegerŒ^‚Ì˜AŒ‹‚Åƒrƒbƒg‚ğ“¾‚é.checked2023_10_10
+    'uintegerå‹ã®é€£çµã§ãƒ“ãƒƒãƒˆã‚’å¾—ã‚‹.checked2023_10_10
     Public Shared Function GetBitUintegerDouble(ByVal aHighUinteger As UInteger, ByVal aLowUinteger As UInteger, ByVal aUintegerDoubleBitPos As UInteger) As UInteger
 
         If aUintegerDoubleBitPos >= UINTEGER_DOUBLE_BIT_LENGTH Then
@@ -369,27 +369,27 @@ Public Class BitOperaterForUintegerDouble
             Return 0 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaUintegerDoubleBitPos <= UINTEGER_DOUBLE_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”aUintegerDoubleBitPos <= UINTEGER_DOUBLE_BIT_LENGTH-1
 
-        'ˆã‚Ì’l‚à‚µ‚­‚Í‰º‚Ì’l‚©‚çƒrƒbƒg‚ğæ‚ê‚é
+        'âˆ´ä¸Šã®å€¤ã‚‚ã—ãã¯ä¸‹ã®å€¤ã‹ã‚‰ãƒ“ãƒƒãƒˆã‚’å–ã‚Œã‚‹
 
         If aUintegerDoubleBitPos >= UINTEGER_BIT_LENGTH Then 'checked
-            '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH<=aUintegerDoubleBitPos <= UINTEGER_DOUBLE_BIT_LENGTH-1
-            'ˆã‚Ì’l‚©‚çƒrƒbƒg‚ğæ‚é
+            'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH<=aUintegerDoubleBitPos <= UINTEGER_DOUBLE_BIT_LENGTH-1
+            'âˆ´ä¸Šã®å€¤ã‹ã‚‰ãƒ“ãƒƒãƒˆã‚’å–ã‚‹
 
-            'ã‚Ì’l‚É‘Î‚·‚éƒrƒbƒgˆÊ’u
+            'ä¸Šã®å€¤ã«å¯¾ã™ã‚‹ãƒ“ãƒƒãƒˆä½ç½®
             Dim high_uinteger_bitpos As UInteger = aUintegerDoubleBitPos - UINTEGER_BIT_LENGTH
 
-            'ã‚Ì’l‚©‚çæ‚èo‚µ‚½ƒrƒbƒg
+            'ä¸Šã®å€¤ã‹ã‚‰å–ã‚Šå‡ºã—ãŸãƒ“ãƒƒãƒˆ
             Dim high_uinteger_bitpos_bit As UInteger = GetBitInUintegerAtBitPos(aHighUinteger, high_uinteger_bitpos)
 
             Return high_uinteger_bitpos_bit
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaUintegerDoubleBitPos<=UINTEGER_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”aUintegerDoubleBitPos<=UINTEGER_BIT_LENGTH-1
 
-        'ˆ‰º‚Ì’l‚©‚ç‚»‚Ì‚Ü‚Üæ‚èo‚·
+        'âˆ´ä¸‹ã®å€¤ã‹ã‚‰ãã®ã¾ã¾å–ã‚Šå‡ºã™
 
         Dim low_uinteger_bitpos_bit As UInteger = GetBitInUintegerAtBitPos(aLowUinteger, aUintegerDoubleBitPos)
         Return low_uinteger_bitpos_bit
@@ -398,7 +398,7 @@ Public Class BitOperaterForUintegerDouble
 
     End Function
 
-    'uintegerŒ^‚Ì˜AŒ‹‚Å‚Ìƒrƒbƒg‚ÌƒZƒbƒg.checked2023_10_10
+    'uintegerå‹ã®é€£çµã§ã®ãƒ“ãƒƒãƒˆã®ã‚»ãƒƒãƒˆ.checked2023_10_10
 
     Public Shared Sub SetBitUintegerDouble(ByRef aRefHighUinteger As UInteger, ByRef aRefLowUinteger As UInteger, ByVal aUintegerDoubleBitPos As UInteger, ByVal aBitFlag As Boolean)
 
@@ -407,20 +407,20 @@ Public Class BitOperaterForUintegerDouble
             Return 'checked
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaUintegerDoubleBitPos<=UINTEGER_DOUBLE_BIT_LENGTH-1
+        'ã“ã“ã«æ¥ã‚‹â‡”aUintegerDoubleBitPos<=UINTEGER_DOUBLE_BIT_LENGTH-1
 
 
         If aUintegerDoubleBitPos >= UINTEGER_BIT_LENGTH Then
-            '‚±‚±‚É—ˆ‚éÌUINTEGER_BIT_LENGTH<=aUintegerDoubleBitPos<=UINTEGER_DOUBLE_BIT_LENGTH-1
-            'ˆã‚Ì’l‚Ì aUintegerDoubleBitPos - UINTEGER_BIT_LENGTHƒrƒbƒg‚ğƒZƒbƒg
+            'ã“ã“ã«æ¥ã‚‹â‡”UINTEGER_BIT_LENGTH<=aUintegerDoubleBitPos<=UINTEGER_DOUBLE_BIT_LENGTH-1
+            'âˆ´ä¸Šã®å€¤ã® aUintegerDoubleBitPos - UINTEGER_BIT_LENGTHãƒ“ãƒƒãƒˆã‚’ã‚»ãƒƒãƒˆ
             SetBitAsUinteger(aRefHighUinteger, aUintegerDoubleBitPos - UINTEGER_BIT_LENGTH, aBitFlag)
 
             Return
 
         End If
 
-        '‚±‚±‚É—ˆ‚éÌaUintegerDoubleBitPos<=UINTEGER_BIT_LENGTH-1
-        'ˆ‰º‚Ì’l‚ÌaUintegerDoubleBitPosƒrƒbƒg‚ğƒZƒbƒg
+        'ã“ã“ã«æ¥ã‚‹â‡”aUintegerDoubleBitPos<=UINTEGER_BIT_LENGTH-1
+        'âˆ´ä¸‹ã®å€¤ã®aUintegerDoubleBitPosãƒ“ãƒƒãƒˆã‚’ã‚»ãƒƒãƒˆ
 
         SetBitAsUinteger(aRefLowUinteger, aUintegerDoubleBitPos, aBitFlag)
 
@@ -428,7 +428,7 @@ Public Class BitOperaterForUintegerDouble
         Return
     End Sub
 
-    '32ƒrƒbƒg‚ğã‰º˜AŒ‹‚É‚µ‚ÄAÅ‚à‚‚¢ƒrƒbƒg1‚ÌˆÊ’u‚ğ“¾‚é.checked2023_10_31
+    '32ãƒ“ãƒƒãƒˆã‚’ä¸Šä¸‹é€£çµã«ã—ã¦ã€æœ€ã‚‚é«˜ã„ãƒ“ãƒƒãƒˆ1ã®ä½ç½®ã‚’å¾—ã‚‹.checked2023_10_31
     Public Shared Function GetHighestBitOnePosInDoubleUinteger(ByVal aHighUintegerValue As UInteger, ByVal aLowUintegerValue As UInteger) As UInteger
 
         If (aHighUintegerValue = 0) And (aLowUintegerValue = 0) Then
@@ -437,17 +437,17 @@ Public Class BitOperaterForUintegerDouble
         End If
 
 
-        '‚±‚±‚É—ˆ‚éÌã‰º‚Ì‚Ç‚¿‚ç‚©‚Í”ñƒ[ƒ
+        'ã“ã“ã«æ¥ã‚‹â‡”ä¸Šä¸‹ã®ã©ã¡ã‚‰ã‹ã¯éã‚¼ãƒ­
         If aHighUintegerValue <> 0 Then 'checked
-            'ã‚ª”ñƒ[ƒ‚Ìê‡‚ÍAã‚Ì32ƒrƒbƒg“à‚ÅÅ‚à‚‚¢ƒrƒbƒg1‚ğ’T‚µA‚»‚ÌƒrƒbƒgˆÊ’u‚ÉUINTEGER_BIT_LENGTH‚ğ‘«‚·
+            'ä¸ŠãŒéã‚¼ãƒ­ã®å ´åˆã¯ã€ä¸Šã®32ãƒ“ãƒƒãƒˆå†…ã§æœ€ã‚‚é«˜ã„ãƒ“ãƒƒãƒˆ1ã‚’æ¢ã—ã€ãã®ãƒ“ãƒƒãƒˆä½ç½®ã«UINTEGER_BIT_LENGTHã‚’è¶³ã™
 
-            Dim highest_bit_one_pos_high As UInteger = GetHighestBitOnePos(aHighUintegerValue) 'ã‚Ì32ƒrƒbƒg“à‚ÅÅ‚à‚‚¢ƒrƒbƒg‚ÌƒrƒbƒgˆÊ’u
-            Dim highest_bit_one_pos_double As UInteger = highest_bit_one_pos_high + UINTEGER_BIT_LENGTH 'ã‰º32ƒrƒbƒg‚Å‚ÌƒrƒbƒgˆÊ’u
+            Dim highest_bit_one_pos_high As UInteger = GetHighestBitOnePos(aHighUintegerValue) 'ä¸Šã®32ãƒ“ãƒƒãƒˆå†…ã§æœ€ã‚‚é«˜ã„ãƒ“ãƒƒãƒˆã®ãƒ“ãƒƒãƒˆä½ç½®
+            Dim highest_bit_one_pos_double As UInteger = highest_bit_one_pos_high + UINTEGER_BIT_LENGTH 'ä¸Šä¸‹32ãƒ“ãƒƒãƒˆã§ã®ãƒ“ãƒƒãƒˆä½ç½®
             Return highest_bit_one_pos_double
         End If
 
-        '‚±‚±‚É—ˆ‚éÌ{ã‰º‚Ì‚Ç‚¿‚ç‚©‚Í”ñƒ[ƒ}‚©‚Â{ã‚Íƒ[ƒ}Ì{ã‚Íƒ[ƒ}‚©‚Â{‰º‚Í”ñƒ[ƒ}
-        'ˆ‰º‚¾‚¯’²‚×‚ÄA‚»‚Ì’l‚ğ“š‚¦‚É‚·‚ê‚Î—Ç‚¢
+        'ã“ã“ã«æ¥ã‚‹â‡”{ä¸Šä¸‹ã®ã©ã¡ã‚‰ã‹ã¯éã‚¼ãƒ­}ã‹ã¤{ä¸Šã¯ã‚¼ãƒ­}â‡”{ä¸Šã¯ã‚¼ãƒ­}ã‹ã¤{ä¸‹ã¯éã‚¼ãƒ­}
+        'âˆ´ä¸‹ã ã‘èª¿ã¹ã¦ã€ãã®å€¤ã‚’ç­”ãˆã«ã™ã‚Œã°è‰¯ã„
 
         Dim low_highest_bitone_pos As UInteger = GetHighestBitOnePos(aLowUintegerValue)
 
@@ -455,37 +455,37 @@ Public Class BitOperaterForUintegerDouble
 
     End Function
 
-    '8ƒoƒCƒg‚ğƒrƒbƒg‚Ì—ñ‚É•ÏŠ·.checked2023_12_18
+    '8ãƒã‚¤ãƒˆã‚’ãƒ“ãƒƒãƒˆã®åˆ—ã«å¤‰æ›.checked2023_12_18
     Public Shared Function ConvertEightByteIntoBitByteArray(ByVal aHighUintegerValue As UInteger, ByVal aLowUintegerValue As UInteger) As Byte()
 
-        'ã4ƒoƒCƒg‚Ìƒrƒbƒg‚Ì”z—ñ
+        'ä¸Š4ãƒã‚¤ãƒˆã®ãƒ“ãƒƒãƒˆã®é…åˆ—
         Dim high_uinteger_value_bit_byte_array() As Byte = ConvertUintegerValueIntoBitArray(aHighUintegerValue)
 
 
-        '‰º4ƒoƒCƒg‚Ìƒrƒbƒg‚Ì”z—ñ
+        'ä¸‹4ãƒã‚¤ãƒˆã®ãƒ“ãƒƒãƒˆã®é…åˆ—
         Dim low_uinteger_value_bit_byte_array() As Byte = ConvertUintegerValueIntoBitArray(aLowUintegerValue)
 
-        'ã4ƒoƒCƒg‚Ìƒrƒbƒg‚Ì”z—ñ‚ğ‰E‘¤(ƒCƒ“ƒfƒbƒNƒX‚ª‘å‚«‚¢•û)
-        '‰º4ƒoƒCƒg‚Ìƒrƒbƒg‚Ì”z—ñ‚ğ‰E¶‘¤(ƒCƒ“ƒfƒbƒNƒX‚ª¬‚³‚¢•û)
+        'ä¸Š4ãƒã‚¤ãƒˆã®ãƒ“ãƒƒãƒˆã®é…åˆ—ã‚’å³å´(ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒå¤§ãã„æ–¹)
+        'ä¸‹4ãƒã‚¤ãƒˆã®ãƒ“ãƒƒãƒˆã®é…åˆ—ã‚’å³å·¦å´(ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒå°ã•ã„æ–¹)
         Dim eight_byte_bit_byte_array() As Byte = ByteArrayOperater.MakeConnectedArray(low_uinteger_value_bit_byte_array, high_uinteger_value_bit_byte_array)
 
         Return eight_byte_bit_byte_array
 
     End Function
 
-    '4ƒoƒCƒg‚Ì’l‚É‘Î‚µ‚ÄAƒT[ƒ`‘ÎÛ‚Ìƒrƒbƒg‚ªƒqƒbƒg‚µ‚½ƒrƒbƒgˆÊ’u‚Ì”z—ñ‚ğì‚é.
+    '8ãƒã‚¤ãƒˆã®å€¤ã«å¯¾ã—ã¦ã€ã‚µãƒ¼ãƒå¯¾è±¡ã®ãƒ“ãƒƒãƒˆãŒãƒ’ãƒƒãƒˆã—ãŸãƒ“ãƒƒãƒˆä½ç½®ã®é…åˆ—ã‚’ä½œã‚‹.
     Public Shared Function MakeHitBitPosArrayBySearchBitFlagInEightByte(ByVal aHighFourByte As UInteger, ByVal aLowFourByte As UInteger, ByVal aSearchBitFlag As Boolean) As UInteger()
 
-        'ã‚Ì4ƒoƒCƒg‚É‚Â‚¢‚ÄAƒT[ƒ`‘ÎÛ‚Ìƒrƒbƒg‚ªƒqƒbƒg‚µ‚½ƒrƒbƒgˆÊ’u‚Ì”z—ñ‚ğì‚é
+        'ä¸Šã®4ãƒã‚¤ãƒˆã«ã¤ã„ã¦ã€ã‚µãƒ¼ãƒå¯¾è±¡ã®ãƒ“ãƒƒãƒˆãŒãƒ’ãƒƒãƒˆã—ãŸãƒ“ãƒƒãƒˆä½ç½®ã®é…åˆ—ã‚’ä½œã‚‹
         Dim hit_bit_pos_array_high() As UInteger = MakeHitBitPosArrayBySearchBitFlagInFourByte(aHighFourByte, aSearchBitFlag)
 
-        'ã‚Ì4ƒoƒCƒg‚ÍA–{“–‚Í‰º32ƒrƒbƒg‚Æ˜AŒ‹‚µ‚Ä‚¢‚é‚Ì‚ÅAƒrƒbƒgˆÊ’u‚Ì’l‚ÉAˆêÄ‚É32‚ğ‘«‚·
+        'ä¸Šã®4ãƒã‚¤ãƒˆã¯ã€æœ¬å½“ã¯ä¸‹32ãƒ“ãƒƒãƒˆã¨é€£çµã—ã¦ã„ã‚‹ã®ã§ã€ãƒ“ãƒƒãƒˆä½ç½®ã®å€¤ã«ã€ä¸€æ–‰ã«32ã‚’è¶³ã™
         Dim hit_bit_pos_array_high_plus_value() As UInteger = UintegerArrayOperater.MakeCommonValuePlusedArray(hit_bit_pos_array_high, UINTEGER_BIT_LENGTH)
 
-        '‰º‚Ì4ƒoƒCƒg‚É‚Â‚¢‚ÄAƒT[ƒ`‘ÎÛ‚Ìƒrƒbƒg‚ªƒqƒbƒg‚µ‚½ƒrƒbƒgˆÊ’u‚Ì”z—ñ‚ğì‚é
+        'ä¸‹ã®4ãƒã‚¤ãƒˆã«ã¤ã„ã¦ã€ã‚µãƒ¼ãƒå¯¾è±¡ã®ãƒ“ãƒƒãƒˆãŒãƒ’ãƒƒãƒˆã—ãŸãƒ“ãƒƒãƒˆä½ç½®ã®é…åˆ—ã‚’ä½œã‚‹
         Dim hit_bit_pos_array_low() As UInteger = MakeHitBitPosArrayBySearchBitFlagInFourByte(aLowFourByte, aSearchBitFlag)
 
-        '˜AŒ‹‚µ‚½Œ‹‰Ê‚ªA8ƒoƒCƒg(ã‰º4ƒoƒCƒg‚Ì˜AŒ‹)‚É‚Â‚¢‚Ä‚ÌŒ‹‰Ê
+        'é€£çµã—ãŸçµæœãŒã€8ãƒã‚¤ãƒˆ(ä¸Šä¸‹4ãƒã‚¤ãƒˆã®é€£çµ)ã«ã¤ã„ã¦ã®çµæœ
         Dim hit_bit_pos_array_eight_byte() As UInteger = UintegerArrayOperater.MakeConnectedArray(hit_bit_pos_array_low, hit_bit_pos_array_high_plus_value)
 
         Return hit_bit_pos_array_eight_byte
