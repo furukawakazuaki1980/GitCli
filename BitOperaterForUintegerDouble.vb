@@ -473,6 +473,24 @@ Public Class BitOperaterForUintegerDouble
 
     End Function
 
+    '4バイトの値に対して、サーチ対象のビットがヒットしたビット位置の配列を作る.
+    Public Shared Function MakeHitBitPosArrayBySearchBitFlagInEightByte(ByVal aHighFourByte As UInteger, ByVal aLowFourByte As UInteger, ByVal aSearchBitFlag As Boolean) As UInteger()
+
+        '上の4バイトについて、サーチ対象のビットがヒットしたビット位置の配列を作る
+        Dim hit_bit_pos_array_high() As UInteger = MakeHitBitPosArrayBySearchBitFlagInFourByte(aHighFourByte, aSearchBitFlag)
+
+        '上の4バイトは、本当は下32ビットと連結しているので、ビット位置の値に、一斉に32を足す
+        Dim hit_bit_pos_array_high_plus_value() As UInteger = UintegerArrayOperater.MakeCommonValuePlusedArray(hit_bit_pos_array_high, UINTEGER_BIT_LENGTH)
+
+        '下の4バイトについて、サーチ対象のビットがヒットしたビット位置の配列を作る
+        Dim hit_bit_pos_array_low() As UInteger = MakeHitBitPosArrayBySearchBitFlagInFourByte(aLowFourByte, aSearchBitFlag)
+
+        '連結した結果が、8バイト(上下4バイトの連結)についての結果
+        Dim hit_bit_pos_array_eight_byte() As UInteger = UintegerArrayOperater.MakeConnectedArray(hit_bit_pos_array_low, hit_bit_pos_array_high_plus_value)
+
+        Return hit_bit_pos_array_eight_byte
+
+    End Function
 
 
 
