@@ -1,0 +1,50 @@
+int main()
+{
+	const unsigned __int16 FOUR_BYTE_COL_LENGTH = 3;
+	const unsigned __int16 ROW_LENGTH = 5;
+
+	unsigned __int32 fourbyte_twodim_array[ROW_LENGTH][FOUR_BYTE_COL_LENGTH];
+
+	//4バイト型ポインタの配列を作る
+	unsigned __int32* fourbyte_pointer_array[ROW_LENGTH];
+
+	for (unsigned __int16 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		fourbyte_pointer_array[row] = &(fourbyte_twodim_array[row][0]);//no_cast
+	}
+
+	//4バイト型ダブルポインタを作る
+
+	unsigned __int32** fourbyte_double_pointer = &(fourbyte_pointer_array[0]);
+
+	//2バイト型ダブルポインタを引数にする関数で値を書く
+	for (unsigned __int32 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		unsigned __int16 write_twobyte_high_row =  0x1000*row;
+		for (unsigned __int32 fourbyte_col = 0; fourbyte_col <= FOUR_BYTE_COL_LENGTH - 1; fourbyte_col++)
+		{
+			unsigned __int16 write_twobyte_low_col = 0x1000 * fourbyte_col;
+
+			unsigned __int32 write_four_byte = ByteOperator::ConnectHiLowTwoByte(write_twobyte_high_row, write_twobyte_low_col);
+
+			PointerReadWrite::WriteFourByteIntoDoublePointerPlace(fourbyte_double_pointer, row, fourbyte_col, write_four_byte);
+		}
+	}
+
+	//2バイト型ダブルポインタで読む
+	for (unsigned __int32 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		for (unsigned __int32 fourbyte_col = 0; fourbyte_col <= FOUR_BYTE_COL_LENGTH - 1; fourbyte_col++)
+		{
+		
+			unsigned __int32 read_four_byte = PointerReadWrite::ReadFromFourByteDoublePointerPlace(fourbyte_double_pointer,row,fourbyte_col);
+
+			read_four_byte = read_four_byte;
+	
+		}
+	}
+
+	
+
+	return 0;
+}
