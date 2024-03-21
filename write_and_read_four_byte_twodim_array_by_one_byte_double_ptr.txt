@@ -1,0 +1,48 @@
+#include "ByteOperator.h"
+#include "PointerReadWrite.h"
+
+const unsigned __int32 ROW_LENGTH = 5;
+const unsigned __int32 FOUR_BYTE_COL_LENGTH = 3;
+const unsigned __int32 ONE_BYTE_COL_LENGTH = FOUR_BYTE_COL_LENGTH*4;
+
+int main()
+{
+	unsigned __int32 four_byte_twodim_array[ROW_LENGTH][FOUR_BYTE_COL_LENGTH];
+	
+	
+	unsigned __int8* one_byte_ptr_vertical_array[ROW_LENGTH];//1バイト型シングルポインタの縦方向の配列
+
+	for (unsigned __int32 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		one_byte_ptr_vertical_array[row] =(unsigned __int8*)(&(four_byte_twodim_array[row][0]));
+	}
+
+    unsigned __int8** one_byte_double_ptr = &(one_byte_ptr_vertical_array[0]);
+
+	for (unsigned __int32 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		for (unsigned __int32 col = 0; col <= ONE_BYTE_COL_LENGTH - 1; col++)
+		{
+			unsigned __int8 write_one_byte = 0x10 * row + col;
+
+			PointerReadWrite::WriteOneByteIntoDoublePointerPlace(one_byte_double_ptr, row, col, write_one_byte);
+		}
+	}
+
+	//ここまでで、1バイト型のダブルポインタによって、4バイト向けの二次元配列に、正常に書けた
+
+	for (unsigned __int32 row = 0; row <= ROW_LENGTH - 1; row++)
+	{
+		for (unsigned __int32 col = 0; col <= ONE_BYTE_COL_LENGTH - 1; col++)
+		{
+			unsigned __int8 read_one_byte = PointerReadWrite::ReadOneByteFromDoublePointerPlace(one_byte_double_ptr, row, col);
+
+			read_one_byte = read_one_byte;
+		
+		}
+	}
+
+	//ここまでで、1バイト型のダブルポインタによって、4バイト向けの二次元配列を、正常に読めた
+	
+	return 0;
+}
