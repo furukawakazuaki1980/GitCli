@@ -1,0 +1,56 @@
+﻿
+
+    '引数のaValueについての素因数分解を行う。素数の配列はaRefPrimeArrayで、指数の配列はaRefIndexArray
+    Public Shared Sub FactorizeInPrimeNumbers(ByVal aValue As UInteger, ByRef aRefPrimeArray() As UInteger, ByRef aRefIndexArray() As UInteger)
+
+        aRefPrimeArray = {}
+        aRefIndexArray = {}
+
+        If aValue <= 1 Then 'checked
+
+            Return
+        End If
+        'ここに来る⇔aValue>=2
+        '∴素因数分解できる
+
+        Dim now_value As UInteger = aValue
+
+        Dim now_prime As UInteger = 2
+
+        While now_value >= 2
+            'now_valueが、now_primeで何回割れるかという数を得る。(ref_prime_divide_countとする)
+            'now_valueを、now_primeで、割れるだけ割った後の結果を得る(ref_divided_resultとする)
+            Dim ref_prime_divide_count As UInteger = 0
+            Dim ref_divided_result As UInteger = 0
+            UintegerValueOperarter.SetDivideResultValueAndDivideCount(now_value, now_prime, ref_divided_result, ref_prime_divide_count)
+
+            If ref_prime_divide_count >= 1 Then 'checked 'now_valueがnow_primeで一回以上割れたという事
+                '素数の配列の末尾に、now_primeを追加
+                GenericArrayOperater(Of UInteger).AddRightArrayToLeftArray(aRefPrimeArray, {now_prime})
+
+                '指数の配列の末尾に、ref_prime_divide_countを追加
+                GenericArrayOperater(Of UInteger).AddRightArrayToLeftArray(aRefIndexArray, {ref_prime_divide_count})
+
+                now_value = ref_prime_divide_count
+
+
+            End If
+
+            'now_prime+1からスタートして、次のnext_primeを作る
+            Dim next_prime As UInteger = UintegerValueOperarter.GetFirstHitPrimeFromStartValue(now_prime + 1)
+
+            '次のループに備えて、now_primeを更新
+            now_prime = next_prime
+
+            '次のループに備えて、ref_divided_resultをnow_valueにする
+            now_value = ref_divided_result
+
+
+        End While
+
+        Return
+
+
+
+    End Sub
+
